@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Courtzee — Track the Court. Zee every win.</title>
-  <meta name="description" content="Courtzee is a tournament manager for racquet sports — padel, tennis, pickleball, racquetball, squash and more. Build brackets, run matches, and share results." />
+  <meta name="description" content="Courtzee is a tournament manager for racquet sports — padel, tennis, pickleball, badminton, squash, racquetball, and table tennis. Build brackets, run matches, and share results." />
   <meta property="og:title" content="Courtzee — Track the Court. Zee every win." />
   <meta property="og:description" content="Tournament manager for racquet sports. Build brackets, run matches, share results." />
   <meta property="og:type" content="website" />
@@ -29,8 +29,8 @@
       <div class="invite-fallback">
         Don't have the app yet? Install it, then tap the link again.
         <div class="stores" style="margin-top:14px;">
-          <a class="store-badge" data-store="android" href="#">
-            <span class="label"><small>GET IT ON</small>Google Play</span>
+          <a class="store-badge" data-store="android" href="#" aria-disabled="true">
+            <span class="label"><small>COMING SOON</small>Google Play</span>
           </a>
           <a class="store-badge" data-store="ios" href="#" aria-disabled="true">
             <span class="label"><small>COMING SOON</small>App Store</span>
@@ -49,9 +49,10 @@
           everyone playing.
         </p>
         <div class="stores">
-          <!-- PLACEHOLDER: swap href for the live Play Store listing once published. -->
-          <a class="store-badge" data-store="android" href="#">
-            <span class="label"><small>GET IT ON</small>Google Play</span>
+          <!-- Play listing not live yet — shows "Coming Soon". The JS below upgrades
+               this to a live "Get it on Google Play" link once CONFIG.playStoreUrl is set. -->
+          <a class="store-badge" data-store="android" href="#" aria-disabled="true">
+            <span class="label"><small>COMING SOON</small>Google Play</span>
           </a>
           <!-- PLACEHOLDER: iOS app not yet released. -->
           <a class="store-badge" data-store="ios" href="#" aria-disabled="true">
@@ -59,7 +60,7 @@
           </a>
         </div>
         <div class="sports">
-          <span>Padel</span>·<span>Tennis</span>·<span>Pickleball</span>·<span>Racquetball</span>·<span>Squash</span>
+          <span>Padel</span>·<span>Tennis</span>·<span>Pickleball</span>·<span>Badminton</span>·<span>Squash</span>·<span>Racquetball</span>·<span>Table Tennis</span>
         </div>
       </div>
 
@@ -103,7 +104,9 @@
     var CONFIG = {
       androidPackage: "com.courtzee.app",
       // PLACEHOLDER store links. Replace once the listings are live.
-      playStoreUrl: "https://play.google.com/store/apps/details?id=com.courtzee.app",
+      // On launch, set playStoreUrl to:
+      //   https://play.google.com/store/apps/details?id=com.courtzee.app
+      playStoreUrl: "#", // PLACEHOLDER: Play listing not live yet — badge shows "Coming Soon".
       appStoreUrl: "#", // PLACEHOLDER: no iOS listing yet.
       inviteScheme: "courtzee", // custom scheme registered by the Android app
       inviteHost: "invite", // courtzee://invite/<token>
@@ -111,9 +114,14 @@
 
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Wire store badges from config.
+    // Wire store badges from config. Both default to a disabled "Coming Soon"
+    // state in the markup; each is upgraded to a live link only when its URL is set.
     document.querySelectorAll('.store-badge[data-store="android"]').forEach(function (a) {
-      a.href = CONFIG.playStoreUrl;
+      if (CONFIG.playStoreUrl && CONFIG.playStoreUrl !== "#") {
+        a.href = CONFIG.playStoreUrl;
+        a.removeAttribute("aria-disabled");
+        a.querySelector("small").textContent = "GET IT ON";
+      }
     });
     document.querySelectorAll('.store-badge[data-store="ios"]').forEach(function (a) {
       if (CONFIG.appStoreUrl && CONFIG.appStoreUrl !== "#") {
