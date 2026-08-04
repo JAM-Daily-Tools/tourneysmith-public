@@ -9,9 +9,10 @@ Intended for **Cloudflare Pages**.
 | File | Purpose |
 |---|---|
 | `index.html` | Landing page **and** invite router. With no token it shows the marketing page; with an invite token it tries to open the app, then falls back to the store. |
-| `privacy.html` | Public privacy policy (mirror of `/PRIVACY-POLICY.md`). |
+| `privacy.html` | Public privacy policy. **Canonical** — the app repo no longer keeps a copy. |
+| `terms.html` | Terms of Service, which also serves as the app's EULA. Canonical. |
 | `styles.css` | Shared styling. |
-| `_redirects` | Cloudflare Pages rewrites: `/invite/<token>` → `index.html`, `/privacy` → `privacy.html`. |
+| `_redirects` | Cloudflare Pages rewrites: `/invite/<token>` → `index.html`. Clean URLs serve `/privacy` and `/terms` automatically. |
 | `.well-known/assetlinks.json` | Android App Links verification (template — needs the real fingerprint). |
 
 ## Deploy to Cloudflare Pages
