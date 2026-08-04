@@ -1,8 +1,9 @@
 # Courtzee web (static site)
 
-Static marketing landing + privacy page + invite router for
+Static marketing landing, legal pages, and invite router for
 [courtzee.app](https://courtzee.app). Zero build step — plain HTML/CSS/JS.
-Intended for **Cloudflare Pages**.
+Deployed as a **Cloudflare Worker with static assets** (see `wrangler.jsonc`);
+pushes to `master` deploy automatically.
 
 ## Files
 
@@ -13,15 +14,19 @@ Intended for **Cloudflare Pages**.
 | `terms.html` | Terms of Service, which also serves as the app's EULA. Canonical. |
 | `styles.css` | Shared styling. |
 | `_redirects` | Cloudflare Pages rewrites: `/invite/<token>` → `index.html`. Clean URLs serve `/privacy` and `/terms` automatically. |
-| `.well-known/assetlinks.json` | Android App Links verification (template — needs the real fingerprint). |
+| `.well-known/assetlinks.json` | Android App Links verification. Contains two real SHA-256 fingerprints — see the TODO below; the release and Play-managed certs are **not** confirmed present. |
+| `wrangler.jsonc` | Cloudflare Worker config. `assets.directory` is `.` — the site is served from the repo root, not a subfolder. |
 
-## Deploy to Cloudflare Pages
+## Deploy
 
-1. Cloudflare dashboard → **Workers & Pages** → **Create** → **Pages** →
-   connect this repo (or direct-upload the `web/` folder).
-2. Build settings: **no build command**; **output directory** = `web`.
-3. Add the custom domain **courtzee.app** (Pages → Custom domains). DNS is
-   already on Cloudflare.
+The Cloudflare project is connected to this repo, so **pushing to `master`
+deploys**. There is no build step and no output subdirectory — `wrangler.jsonc`
+serves the repo root (`assets.directory: "."`).
+
+The custom domain **courtzee.app** is already attached and DNS is on Cloudflare.
+
+After any change, verify the deployed URL rather than the local file — a file in
+this repo is not evidence that the page is live.
 
 ## Invite routing
 
@@ -38,13 +43,15 @@ after ~1.5s if nothing handles the scheme.
 
 - [ ] **Store links** — `index.html` `CONFIG.playStoreUrl` / `appStoreUrl` are
       placeholders. Update once the Play listing is live and iOS ships.
-- [ ] **App Links fingerprint** — replace
-      `REPLACE_WITH_RELEASE_SIGNING_SHA256_FINGERPRINT` in
-      `.well-known/assetlinks.json` with the release signing cert SHA-256
-      (`keytool -list -v -keystore <release.keystore>` or the Play Console
-      App Signing page). Only needed once the app adds an `autoVerify` HTTPS
-      intent-filter for the `courtzee.app` host (the P7-7 follow-up); the
-      custom-scheme fallback above works without it.
+- [ ] **App Links fingerprints** — `.well-known/assetlinks.json` currently lists
+      two SHA-256 fingerprints. They match entries registered in Firebase, but
+      **which of them is the release signing cert has not been verified** (the
+      release keystore lives on the Ubuntu machine). Confirm the release cert is
+      present, and add the **Play App Signing** cert SHA-256 once the Play
+      account exists — Play re-signs the bundle, so links break without it.
+      Only required once the app adds an `autoVerify` HTTPS intent-filter for
+      the `courtzee.app` host; the custom-scheme fallback above works without
+      it.
 - [ ] **Switch share links to HTTPS** — when App Links are verified, change the
       app's `INVITE_DEEP_LINK_PREFIX` (currently `courtzee://invite/`) to
       `https://courtzee.app/invite/` so links are clickable everywhere.
