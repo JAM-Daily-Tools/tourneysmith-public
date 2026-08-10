@@ -12,6 +12,7 @@ pushes to `master` deploy automatically.
 | `index.html` | Landing page **and** invite router. With no token it shows the marketing page; with an invite token it tries to open the app, then falls back to the store. |
 | `privacy.html` | Public privacy policy. **Canonical** — the app repo no longer keeps a copy. |
 | `terms.html` | Terms of Service, which also serves as the app's EULA. Canonical. |
+| `app-ads.txt` | AdMob authorized-sellers declaration. Must stay at the **root** and be served as `text/plain`. The publisher ID is public by design. AdMob only crawls this once a store listing declares `courtzee.app` as the developer website — see P14-7 in the app repo's `docs/tasks/CLOUD-PHASE-14.md`. |
 | `styles.css` | Shared styling. |
 | `_redirects` | Cloudflare Pages rewrites: `/invite/<token>` → `index.html`. Clean URLs serve `/privacy` and `/terms` automatically. |
 | `.well-known/assetlinks.json` | Android App Links verification. Contains two real SHA-256 fingerprints — see the TODO below; the release and Play-managed certs are **not** confirmed present. |
