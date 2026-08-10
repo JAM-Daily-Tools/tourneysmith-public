@@ -3,10 +3,9 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "com.courtzee.app",
+      "package_name": "com.jamdailytools.tourneysmith",
       "sha256_cert_fingerprints": [
-        "C6:A5:BD:E1:59:19:D2:A2:4C:0B:34:71:F1:5B:E9:67:EE:19:90:2C:1B:80:19:38:59:1D:42:5B:25:AA:AF:7B",
-        "A6:D5:28:D2:B0:55:56:09:7F:13:E5:25:18:23:0F:48:AA:60:F1:34:A6:30:82:D1:56:25:A1:D0:AA:4B:D7:5F"
+        "EA:EA:F8:3E:F4:08:3B:E5:16:CA:2D:0F:24:AC:8D:17:72:B8:64:13:81:4A:31:A5:81:16:70:D4:93:FF:63:CB"
       ]
     }
   }

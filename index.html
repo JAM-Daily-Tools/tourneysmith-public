@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Courtzee — Track the Court. Zee every win.</title>
-  <meta name="description" content="Courtzee is a tournament manager for racquet sports — padel, tennis, pickleball, badminton, squash, racquetball, and table tennis. Build brackets, run matches, and share results." />
-  <meta property="og:title" content="Courtzee — Track the Court. Zee every win." />
+  <title>TourneySmith — Tournament manager for racquet sports</title>
+  <meta name="description" content="TourneySmith is a tournament manager for racquet sports — padel, tennis, pickleball, badminton, squash, racquetball, and table tennis. Build brackets, run matches, and share results." />
+  <meta property="og:title" content="TourneySmith — Tournament manager for racquet sports" />
   <meta property="og:description" content="Tournament manager for racquet sports. Build brackets, run matches, share results." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://courtzee.app/" />
+  <meta property="og:url" content="https://tourneysmith.com/" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/"><span class="dot"></span>Courtzee</a>
+    <a class="brand" href="/"><span class="dot"></span>TourneySmith</a>
     <nav class="nav">
       <a href="#features">Features</a>
       <a href="/privacy.html">Privacy</a>
@@ -25,8 +25,8 @@
     <!-- Invite routing panel: shown only when an invite token is present. -->
     <section id="invite" class="invite-panel hidden">
       <h2>You're invited to a tournament</h2>
-      <p>Open the invite in the Courtzee app to join.</p>
-      <button id="open-app" class="btn-primary" type="button">Open in Courtzee</button>
+      <p>Open the invite in the TourneySmith app to join.</p>
+      <button id="open-app" class="btn-primary" type="button">Open in TourneySmith</button>
       <div class="invite-fallback">
         Don't have the app yet? Install it, then tap the link again.
         <div class="stores" style="margin-top:14px;">
@@ -43,11 +43,11 @@
     <!-- Marketing landing: shown when there is no invite token. -->
     <section id="landing">
       <div class="hero">
-        <h1>Track the Court.<br />Zee every win.</h1>
+        <h1>Run your racquet-sport<br />tournaments end to end.</h1>
         <p class="lede">
-          Courtzee runs your racquet-sport tournaments end to end — build
-          brackets, assign courts, record scores, and share live results with
-          everyone playing.
+          TourneySmith builds brackets, assigns courts, records scores, and
+          shares live results with everyone playing — from a casual club night
+          to a full weekend draw.
         </p>
         <div class="stores">
           <!-- Play listing not live yet — shows "Coming Soon". The JS below upgrades
@@ -91,11 +91,11 @@
   </main>
 
   <footer class="site-footer">
-    <div>© <span id="year"></span> Courtzee · Track the Court. Zee every win.</div>
+    <div>© <span id="year"></span> JAM Daily Tools LLC · TourneySmith</div>
     <div style="margin-top:8px;">
       <a href="/privacy.html">Privacy Policy</a>
       <a href="/terms.html">Terms of Service</a>
-      <a href="mailto:support@courtzee.app">Support</a>
+      <a href="mailto:support@jamdailytools.com">Support</a>
     </div>
   </footer>
 
@@ -104,14 +104,14 @@
     // Config — update these in one place.
     // ---------------------------------------------------------------------
     var CONFIG = {
-      androidPackage: "com.courtzee.app",
+      androidPackage: "com.jamdailytools.tourneysmith",
       // PLACEHOLDER store links. Replace once the listings are live.
       // On launch, set playStoreUrl to:
-      //   https://play.google.com/store/apps/details?id=com.courtzee.app
+      //   https://play.google.com/store/apps/details?id=com.jamdailytools.tourneysmith
       playStoreUrl: "#", // PLACEHOLDER: Play listing not live yet — badge shows "Coming Soon".
       appStoreUrl: "#", // PLACEHOLDER: no iOS listing yet.
-      inviteScheme: "courtzee", // custom scheme registered by the Android app
-      inviteHost: "invite", // courtzee://invite/<token>
+      inviteScheme: "tourneysmith", // custom scheme registered by both apps
+      inviteHost: "invite", // tourneysmith://invite/<token>
     };
 
     document.getElementById("year").textContent = new Date().getFullYear();
