@@ -61,6 +61,13 @@ a { color: var(--court-dark); }
   box-shadow: 0 0 0 4px rgba(31, 138, 76, 0.18);
 }
 
+/* Wordmark lockup is 2:1; height-constrained so it lines up with the brand text. */
+.brand .brand-mark {
+  height: 21px;
+  width: auto;
+  display: block;
+}
+
 .nav a {
   margin-left: 22px;
   text-decoration: none;
