@@ -1,0 +1,10 @@
+# Cloudflare static-asset response headers (same mechanism as _redirects).
+#
+# Referrer-Policy is the load-bearing one. Invite URLs carry a claim token in the
+# path (/invite/<token>), so any outbound navigation from that page — tapping
+# through to a store listing, say — would otherwise send the full URL, token and
+# all, in the Referer header. no-referrer suppresses it everywhere.
+/*
+  Referrer-Policy: no-referrer
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
