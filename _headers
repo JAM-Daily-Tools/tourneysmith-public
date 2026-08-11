@@ -8,3 +8,12 @@
   Referrer-Policy: no-referrer
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
+
+# HTML must revalidate on every request. Without this the edge served a stale
+# landing page for hours after a deploy — cf-cache-status stayed HIT even though
+# the Worker had the new content, and a cache purge was the only way to see a
+# change. Hashed-name assets are unaffected and stay cached normally.
+/
+  Cache-Control: no-cache
+/*.html
+  Cache-Control: no-cache
