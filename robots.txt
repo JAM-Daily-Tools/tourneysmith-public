@@ -1,0 +1,7 @@
+# Invite URLs carry a claim token in the path and are served as a 200 rewrite,
+# not a redirect — so a crawler reaching one would index the token itself.
+# Disallow the whole prefix; there is nothing there worth indexing anyway, since
+# every /invite/* URL renders the same page.
+User-agent: *
+Disallow: /invite/
+Allow: /
