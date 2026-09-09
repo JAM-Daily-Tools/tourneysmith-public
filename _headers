@@ -17,3 +17,10 @@
   Cache-Control: no-cache
 /*.html
   Cache-Control: no-cache
+
+# Same reason, and it matters more here than for HTML: Android fetches
+# assetlinks.json to verify App Links, so a stale edge copy verifies against the
+# wrong fingerprint list and links silently stop resolving. Nothing surfaces
+# that — there is no page to look at and notice is wrong.
+/.well-known/*
+  Cache-Control: no-cache

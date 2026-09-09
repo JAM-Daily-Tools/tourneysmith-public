@@ -15,7 +15,7 @@ pushes to `master` deploy automatically.
 | `app-ads.txt` | AdMob authorized-sellers declaration. Must stay at the **root** and be served as `text/plain`. The publisher ID is public by design. AdMob only crawls this once a store listing declares `tourneysmith.com` as the developer website — see P14-7 in the app repo's `docs/tasks/CLOUD-PHASE-14.md`. |
 | `styles.css` | Shared styling. |
 | `_redirects` | Cloudflare Pages rewrites: `/invite/<token>` → `index.html`. Clean URLs serve `/privacy` and `/terms` automatically. |
-| `.well-known/assetlinks.json` | Android App Links verification. Contains two real SHA-256 fingerprints — see the TODO below; the release and Play-managed certs are **not** confirmed present. |
+| `.well-known/assetlinks.json` | Android App Links verification. Lists the **upload key** and the **Play App Signing** certs, so both directly installed and Play-installed builds verify. Confirmed 2026-09-08. |
 | `wrangler.jsonc` | Cloudflare Worker config. `assets.directory` is `.` — the site is served from the repo root, not a subfolder. |
 
 ## Deploy
@@ -48,15 +48,16 @@ after ~1.5s if nothing handles the scheme.
 
 - [ ] **Store links** — `index.html` `CONFIG.playStoreUrl` / `appStoreUrl` are
       placeholders. Update once the Play listing is live and iOS ships.
-- [ ] **App Links fingerprints** — `.well-known/assetlinks.json` currently lists
-      two SHA-256 fingerprints. They match entries registered in Firebase, but
-      **which of them is the release signing cert has not been verified** (the
-      release keystore lives on the Ubuntu machine). Confirm the release cert is
-      present, and add the **Play App Signing** cert SHA-256 once the Play
-      account exists — Play re-signs the bundle, so links break without it.
-      Only required once the app adds an `autoVerify` HTTPS intent-filter for
-      the `tourneysmith.com` host; the custom-scheme fallback above works without
-      it.
+- [x] **App Links fingerprints** — done 2026-09-08. The file had drifted to a
+      single fingerprint despite this note claiming two. `keytool` against the
+      release keystore confirmed the one present was the **upload key**
+      (`EA:EA:F8:3E…`), answering "which of them is the release cert". The
+      **Play App Signing** cert (`B7:94:EE:15…`) was then added — Play re-signs
+      the bundle, so without it links resolve in locally installed builds and
+      break for every install from Play. Both are listed; neither replaces the
+      other. Read from Play Console → Protected with Play → Manage Play app
+      signing → **Classical key** (the post-quantum key alongside it has no
+      documented Digital Asset Links path).
 - [ ] **Switch share links to HTTPS** — when App Links are verified, change the
       app's `INVITE_DEEP_LINK_PREFIX` (currently `tourneysmith://invite/`) to
       `https://tourneysmith.com/invite/` so links are clickable everywhere.
