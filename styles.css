@@ -229,3 +229,68 @@ a { color: var(--court-dark); }
 .legal th, .legal td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; font-size: 0.92rem; }
 .legal code { background: #eef3ef; padding: 1px 5px; border-radius: 4px; }
 .legal .updated { color: var(--muted); font-style: italic; }
+
+.site-header {
+  gap: 22px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav a { margin-left: 0; }
+
+.language-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.language-picker select {
+  max-width: 180px;
+  padding: 7px 28px 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  color: var(--ink);
+  background: var(--card);
+  font: inherit;
+}
+
+.feature-section { margin-bottom: 64px; }
+.section-heading { max-width: 720px; margin: 10px auto 0; text-align: center; }
+.section-heading h2 { margin-bottom: 6px; font-size: clamp(1.55rem, 4vw, 2rem); }
+.section-heading p { margin: 0; color: var(--muted); }
+.feature-section .features { margin-top: 28px; margin-bottom: 0; }
+
+.invite-panel h1 { margin: 0 0 8px; font-size: 1.7rem; }
+.invite-fallback p { margin-bottom: 14px; }
+
+.legal address {
+  padding: 14px 16px;
+  border-left: 3px solid var(--court);
+  background: #f1f7f3;
+  font-style: normal;
+}
+
+.legal h3 { margin: 20px 0 8px; font-size: 1.05rem; }
+.legal li + li { margin-top: 7px; }
+.legal section { scroll-margin-top: 24px; }
+
+.site-footer nav { margin-top: 9px; }
+
+@media (max-width: 760px) {
+  .site-header { align-items: flex-start; flex-direction: column; }
+  .nav { justify-content: flex-start; gap: 12px 16px; }
+  .language-picker { width: 100%; }
+  .language-picker select { flex: 1; max-width: 250px; }
+  .hero { padding-top: 36px; }
+  .sports { line-height: 2; }
+  .legal { padding: 24px 20px; margin-top: 18px; }
+}

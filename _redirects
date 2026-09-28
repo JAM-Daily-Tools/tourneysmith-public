@@ -1,8 +1,8 @@
-# Cloudflare Pages/Workers redirects/rewrites.
-# Keep /invite/<token> on the landing page (200 = rewrite, URL preserved) so the
-# page's JS can read the token from the path and open the app. Target "/" (not
-# /index.html) to avoid Cloudflare's clean-URL loop detection.
-/invite/*    /     200
-
-# /privacy serves privacy.html automatically via Cloudflare clean URLs, so no
-# rule is needed.
+# Invite routes are internal rewrites. Cloudflare keeps the original URL and
+# query string, allowing site.js to read the token and preserve campaign data.
+/invite/*       /        200
+/es/invite/*    /es/     200
+/es-ES/invite/* /es-ES/  200
+/pt/invite/*    /pt/     200
+/fr/invite/*    /fr/     200
+/it/invite/*    /it/     200

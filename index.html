@@ -1,187 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TourneySmith — Craft of running tournaments.</title>
-  <meta name="description" content="Run racquet-sport tournaments with TourneySmith. Set up formats, assign courts, record scores, and share results for padel, tennis, pickleball, badminton, squash, racquetball, and table tennis." />
-  <meta property="og:title" content="TourneySmith — Craft of running tournaments." />
-  <meta property="og:description" content="Set up racquet-sport tournaments, assign courts, record scores, and share results." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tourneysmith.com/" />
-  <meta property="og:image" content="https://tourneysmith.com/og-image.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="stylesheet" href="/styles.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TourneySmith | Run racket-sport tournaments</title>
+  <meta name="description" content="Run racket-sport tournaments with live brackets, schedules, scores, standings, invitations, player groups, and cloud sync for Android and iOS.">
+  <link rel="canonical" href="https://tourneysmith.com/">
+  <link rel="alternate" hreflang="en" href="https://tourneysmith.com/">
+  <link rel="alternate" hreflang="es" href="https://tourneysmith.com/es/">
+  <link rel="alternate" hreflang="es-ES" href="https://tourneysmith.com/es-ES/">
+  <link rel="alternate" hreflang="pt-BR" href="https://tourneysmith.com/pt/">
+  <link rel="alternate" hreflang="fr" href="https://tourneysmith.com/fr/">
+  <link rel="alternate" hreflang="it" href="https://tourneysmith.com/it/">
+  <link rel="alternate" hreflang="x-default" href="https://tourneysmith.com/">
+  <meta property="og:title" content="TourneySmith | Run racket-sport tournaments">
+  <meta property="og:description" content="Run racket-sport tournaments with live brackets, schedules, scores, standings, invitations, player groups, and cloud sync for Android and iOS.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tourneysmith.com/">
+  <meta property="og:image" content="https://tourneysmith.com/og-image.png">
+  <meta name="theme-color" content="#1f8a4c">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/site.js" defer></script>
 </head>
-<body>
-  <header class="site-header">
-    <a class="brand" href="/"><img class="brand-mark" src="/brand-mark.png" alt="" width="43" height="21" />TourneySmith</a>
-    <nav class="nav">
-      <a href="#features">Features</a>
-      <a href="/privacy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
-    </nav>
-  </header>
-
-  <main class="wrap">
-    <!-- Invite routing panel: shown only when an invite token is present. -->
-    <section id="invite" class="invite-panel hidden">
-      <h2>You’ve been invited to a TourneySmith tournament</h2>
-      <p>Open this invite in the app to view the tournament and respond.</p>
-      <button id="open-app" class="btn-primary" type="button">Open in app</button>
-      <div class="invite-fallback">
-        New to TourneySmith? Install the app, then open this invite again.
-        <div class="stores" style="margin-top:14px;">
-          <a class="store-badge" data-store="android" href="#" aria-disabled="true">
-            <span class="label"><small>COMING SOON</small>Google Play</span>
-          </a>
-          <a class="store-badge" data-store="ios" href="#" aria-disabled="true">
-            <span class="label"><small>COMING SOON</small>App Store</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Marketing landing: shown when there is no invite token. -->
-    <section id="landing">
-      <div class="hero">
-        <p class="tagline">Craft of running tournaments.</p>
-        <h1>Run the whole tournament<br />from one place.</h1>
-        <p class="lede">
-          Set up the format, add players, assign courts, record scores, and
-          share results as the tournament unfolds. It works for a casual club night
-          or a full weekend draw.
-        </p>
-        <div class="stores">
-          <!-- Play listing not live yet — shows "Coming Soon". The JS below upgrades
-               this to a live "Get it on Google Play" link once CONFIG.playStoreUrl is set. -->
-          <a class="store-badge" data-store="android" href="#" aria-disabled="true">
-            <span class="label"><small>COMING SOON</small>Google Play</span>
-          </a>
-          <!-- PLACEHOLDER: iOS app not yet released. -->
-          <a class="store-badge" data-store="ios" href="#" aria-disabled="true">
-            <span class="label"><small>COMING SOON</small>App Store</span>
-          </a>
-        </div>
-        <div class="sports">
-          <span>Padel</span>·<span>Tennis</span>·<span>Pickleball</span>·<span>Badminton</span>·<span>Squash</span>·<span>Racquetball</span>·<span>Table Tennis</span>
-        </div>
-      </div>
-
-      <section id="features" class="features">
-        <div class="card">
-          <h3>Pick the format</h3>
-          <p>Choose single or double elimination, round robin, ladder, or king of
-            the court, with singles and doubles where the sport supports them.</p>
-        </div>
-        <div class="card">
-          <h3>Keep everyone updated</h3>
-          <p>Invite players or viewers with a link. Everyone follows the same
-            tournament, standings, and results.</p>
-        </div>
-        <div class="card">
-          <h3>Reuse your players</h3>
-          <p>Add players once, reuse them in any tournament, and keep their wins,
-            losses, and win rate.</p>
-        </div>
-        <div class="card">
-          <h3>Switch devices without starting over</h3>
-          <p>Sign in on another device and your tournaments, players, and results
-            are there.</p>
-        </div>
-      </section>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div>© <span id="year"></span> JAM Daily Tools LLC · Craft of running tournaments.</div>
-    <div style="margin-top:8px;">
-      <a href="/privacy.html">Privacy Policy</a>
-      <a href="/terms.html">Terms of Service</a>
-      <a href="mailto:support@jamdailytools.com">Support</a>
+<body data-locale="en" data-page="marketing">
+<header class="site-header">
+  <a class="brand" data-local-link href="/"><img class="brand-mark" src="/brand-mark.png" alt="" width="43" height="21">TourneySmith</a>
+  <nav class="nav" aria-label="Primary navigation">
+    <a data-local-link href="/#features">Features</a>
+    <a data-local-link href="/privacy">Privacy</a>
+    <a data-local-link href="/terms">Terms</a>
+    <label class="language-picker"><span>Language</span><select data-language-select aria-label="Language"><option value="en" selected>English</option><option value="es">Español (Latinoamérica)</option><option value="es-ES">Español (España)</option><option value="pt-BR">Português (Brasil)</option><option value="fr">Français</option><option value="it">Italiano</option></select></label>
+  </nav>
+</header>
+<main class="wrap">
+  <section id="invite" class="invite-panel hidden" aria-live="polite">
+    <h1>You’ve been invited to a TourneySmith tournament</h1>
+    <p>Open this invitation in the app to view the tournament and respond.</p>
+    <button id="open-app" class="btn-primary" type="button">Open in app</button>
+    <div class="invite-fallback"><p>New to TourneySmith? Install the app, then open this invitation again.</p><div class="stores">
+  <a class="store-badge" data-store="android" href="#" aria-disabled="true"><span class="label"><small>COMING SOON</small>Google Play</span></a>
+  <a class="store-badge" data-store="ios" href="#" aria-disabled="true"><span class="label"><small>COMING SOON</small>App Store</span></a>
+</div></div>
+  </section>
+  <section id="landing">
+    <div class="hero">
+      <p class="tagline">Craft of running tournaments.</p>
+      <h1>Run the whole tournament<br>from one place.</h1>
+      <p class="lede">Choose the format, bring in your players, schedule courts, record scores, and share results as the tournament unfolds.</p>
+      <div class="stores">
+  <a class="store-badge" data-store="android" href="#" aria-disabled="true"><span class="label"><small>COMING SOON</small>Google Play</span></a>
+  <a class="store-badge" data-store="ios" href="#" aria-disabled="true"><span class="label"><small>COMING SOON</small>App Store</span></a>
+</div>
+      <div class="sports"><span>Padel</span> · <span>Tennis</span> · <span>Pickleball</span> · <span>Badminton</span> · <span>Squash</span> · <span>Racquetball</span> · <span>Table Tennis</span></div>
     </div>
-  </footer>
-
-  <script>
-    // ---------------------------------------------------------------------
-    // Config — update these in one place.
-    // ---------------------------------------------------------------------
-    var CONFIG = {
-      androidPackage: "com.jamdailytools.tourneysmith",
-      // PLACEHOLDER store links. Replace once the listings are live.
-      // On launch, set playStoreUrl to:
-      //   https://play.google.com/store/apps/details?id=com.jamdailytools.tourneysmith
-      playStoreUrl: "#", // PLACEHOLDER: Play listing not live yet — badge shows "Coming Soon".
-      appStoreUrl: "#", // PLACEHOLDER: no iOS listing yet.
-      inviteScheme: "tourneysmith", // custom scheme registered by both apps
-      inviteHost: "invite", // tourneysmith://invite/<token>
-    };
-
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Wire store badges from config. Both default to a disabled "Coming Soon"
-    // state in the markup; each is upgraded to a live link only when its URL is set.
-    document.querySelectorAll('.store-badge[data-store="android"]').forEach(function (a) {
-      if (CONFIG.playStoreUrl && CONFIG.playStoreUrl !== "#") {
-        a.href = CONFIG.playStoreUrl;
-        a.removeAttribute("aria-disabled");
-        a.querySelector("small").textContent = "GET IT ON";
-      }
-    });
-    document.querySelectorAll('.store-badge[data-store="ios"]').forEach(function (a) {
-      if (CONFIG.appStoreUrl && CONFIG.appStoreUrl !== "#") {
-        a.href = CONFIG.appStoreUrl;
-        a.removeAttribute("aria-disabled");
-        a.querySelector("small").textContent = "DOWNLOAD ON THE";
-      }
-    });
-
-    // ---------------------------------------------------------------------
-    // Invite routing.
-    // Accepts both:  /invite/<token>   and   /?invite=<token>
-    // Opens the app via the custom scheme; falls back to the store if the
-    // app does not handle the link within a short window.
-    // ---------------------------------------------------------------------
-    function readToken() {
-      var qp = new URLSearchParams(window.location.search).get("invite");
-      if (qp) return qp.trim();
-      var m = window.location.pathname.match(/^\/invite\/([^\/?#]+)/);
-      return m ? decodeURIComponent(m[1]) : null;
-    }
-
-    function appLink(token) {
-      return CONFIG.inviteScheme + "://" + CONFIG.inviteHost + "/" + encodeURIComponent(token);
-    }
-
-    var token = readToken();
-    if (token) {
-      document.getElementById("landing").classList.add("hidden");
-      document.getElementById("invite").classList.remove("hidden");
-
-      var target = appLink(token);
-      var openBtn = document.getElementById("open-app");
-
-      function launch() {
-        var fellBack = false;
-        // If the app opens, the page is backgrounded and the timer is paused;
-        // if nothing handles the scheme, we send the user to the store.
-        var t = setTimeout(function () {
-          if (!fellBack && CONFIG.playStoreUrl && CONFIG.playStoreUrl !== "#") {
-            window.location.href = CONFIG.playStoreUrl;
-          }
-        }, 1500);
-        window.addEventListener("pagehide", function () {
-          fellBack = true;
-          clearTimeout(t);
-        });
-        window.location.href = target;
-      }
-
-      openBtn.addEventListener("click", launch);
-      // Auto-attempt once on load (most expected path: tapped from an email).
-      launch();
-    }
-  </script>
+    <section id="features" class="feature-section" aria-labelledby="features-title">
+      <div class="section-heading"><h2 id="features-title">Built for the work between sign-up and the final score</h2><p>Set up the event once, then keep organizers, players, and viewers on the same tournament.</p></div>
+      <div class="features"><article class="card"><h3>Choose the format and scoring</h3><p>Run single elimination, double elimination, round robin, ladder, or King of the Court. Configure sets and games, tie-breaks, win by two, point caps, rotating partners, consolation brackets, and points rankings where the format supports them.</p></article>
+<article class="card"><h3>Bring back the right players</h3><p>Reuse saved players, add placeholder players, organize player groups, and select from as many as four groups when building a tournament. TourneySmith supports singles and doubles where each sport allows them.</p></article>
+<article class="card"><h3>Share one live tournament</h3><p>Invite players, viewers, and co-organizers. Shared tournaments keep live brackets, standings, results, and score entry together so everyone follows the same event.</p></article>
+<article class="card"><h3>Plan the day</h3><p>Schedule the tournament, set venues and courts, and control tournament notifications. Each person can choose all notifications, important updates only, or mute a tournament.</p></article>
+<article class="card"><h3>Keep the sporting record</h3><p>Player profiles bring together sport statistics, wins, losses, win rate, and tournament history without changing the results stored in completed events.</p></article>
+<article class="card"><h3>Move between devices</h3><p>Sign in on Android or iOS and cloud sync keeps your tournaments available. Privacy controls let you hide statistics, choose who can add you, block users, and delete your account.</p></article></div>
+    </section>
+  </section>
+</main>
+<footer class="site-footer">
+  <div>© <span data-current-year></span> JAM Daily Tools LLC. Craft of running tournaments.</div>
+  <nav aria-label="Footer navigation">
+    <a data-local-link href="/">Home</a>
+    <a data-local-link href="/privacy">Privacy</a>
+    <a data-local-link href="/terms">Terms</a>
+    <a data-local-link href="/delete-account">Delete account</a>
+    <a href="mailto:support@jamdailytools.com">Support</a>
+  </nav>
+</footer>
 </body>
 </html>

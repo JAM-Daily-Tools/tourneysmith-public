@@ -1,8 +1,8 @@
 # Cloudflare static-asset response headers (same mechanism as _redirects).
 #
 # Referrer-Policy is the load-bearing one. Invite URLs carry a claim token in the
-# path (/invite/<token>), so any outbound navigation from that page — tapping
-# through to a store listing, say — would otherwise send the full URL, token and
+# path (/invite/<token>), so outbound navigation from that page, such as tapping
+# through to a store listing, would otherwise send the full URL, token and
 # all, in the Referer header. no-referrer suppresses it everywhere.
 /*
   Referrer-Policy: no-referrer
@@ -10,17 +10,35 @@
   X-Frame-Options: DENY
 
 # HTML must revalidate on every request. Without this the edge served a stale
-# landing page for hours after a deploy — cf-cache-status stayed HIT even though
+# landing page for hours after a deploy; cf-cache-status stayed HIT even though
 # the Worker had the new content, and a cache purge was the only way to see a
 # change. Hashed-name assets are unaffected and stay cached normally.
 /
   Cache-Control: no-cache
 /*.html
   Cache-Control: no-cache
+/privacy
+  Cache-Control: no-cache
+/terms
+  Cache-Control: no-cache
+/delete-account
+  Cache-Control: no-cache
+/invite/*
+  Cache-Control: no-cache
+/es/*
+  Cache-Control: no-cache
+/es-ES/*
+  Cache-Control: no-cache
+/pt/*
+  Cache-Control: no-cache
+/fr/*
+  Cache-Control: no-cache
+/it/*
+  Cache-Control: no-cache
 
 # Same reason, and it matters more here than for HTML: Android fetches
 # assetlinks.json to verify App Links, so a stale edge copy verifies against the
 # wrong fingerprint list and links silently stop resolving. Nothing surfaces
-# that — there is no page to look at and notice is wrong.
+# that because there is no page to look at and notice is wrong.
 /.well-known/*
   Cache-Control: no-cache
