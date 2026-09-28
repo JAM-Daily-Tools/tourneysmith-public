@@ -41,8 +41,10 @@ the path token, query string, and fragment when the visitor changes language,
 then opens `tourneysmith://invite/<token>` on request.
 
 Store URLs remain placeholders. Set live store links only after the listings
-are known. Do not change `app-ads.txt`, `.well-known/assetlinks.json`, or a
-future `.well-known/apple-app-site-association` as part of localization.
+are known. Do not change `app-ads.txt`, `.well-known/assetlinks.json`, or
+`.well-known/apple-app-site-association` as part of localization. The Apple
+association identifies Team ID `25ADYD99Q3`, bundle ID
+`com.jamdailytools.tourneysmith`, and only `/invite/*` URLs.
 
 ## Legal boundary and launch decision
 
@@ -65,7 +67,7 @@ The repository rules prohibit the assistant from running tests. The owner runs:
 node --test test/landing-copy.test.mjs
 ```
 
-Expected result: 15 passing tests.
+Expected result: 16 passing tests.
 
 ## Deployment notes
 
@@ -74,6 +76,8 @@ branch can deploy automatically, so review generated HTML and owner-run test
 results before pushing. `tourneysmith.com` must be attached as the Worker custom
 domain when launch configuration is ready.
 
-Before launch, replace store placeholders, switch app share links to verified
-HTTPS links, and add Apple’s association file when the iOS identifiers are
-final.
+Before launch, replace store placeholders and verify the iOS build contains the
+`applinks:tourneysmith.com` associated-domain entitlement. Confirm Associated
+Domains is enabled for the Apple Bundle ID and present in the signed provisioning
+profile. Test an HTTPS invite on a signed physical-device build after Apple’s
+association CDN has refreshed.

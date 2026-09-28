@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "25ADYD99Q3.com.jamdailytools.tourneysmith",
+        "components": [
+          {
+            "/": "/invite/*",
+            "comment": "Matches TourneySmith invitation URLs."
+          }
+        ]
+      }
+    ]
+  }
+}
