@@ -77,8 +77,12 @@ branch can deploy automatically, so review generated HTML and owner-run test
 results before pushing. `tourneysmith.com` must be attached as the Worker custom
 domain when launch configuration is ready.
 
-Before launch, replace store placeholders and verify the iOS build contains the
-`applinks:tourneysmith.com` associated-domain entitlement. Confirm Associated
-Domains is enabled for the Apple Bundle ID and present in the signed provisioning
-profile. Test an HTTPS invite on a signed physical-device build after Apple’s
-association CDN has refreshed.
+The Cloudflare origin and Apple's association CDN served the exact AASA file on
+2026-09-28. The live Android association also matched the repository with the
+release certificate and all three Play signing paths.
+
+Before launch, replace store placeholders and confirm Associated Domains is
+enabled for the Apple Bundle ID and present in the distribution signature. With
+the first TestFlight build installed, tap an HTTPS invite from Notes or Messages
+on a real iPhone. A borrowed compatible iPhone is sufficient; TestFlight does not
+require registering its UDID.
