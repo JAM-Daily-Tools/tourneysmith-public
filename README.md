@@ -42,8 +42,9 @@ then opens `tourneysmith://invite/<token>` on request.
 
 Store URLs remain placeholders. Set live store links only after the listings
 are known. Do not change `app-ads.txt`, `.well-known/assetlinks.json`, or
-`.well-known/apple-app-site-association` as part of localization. The Apple
-association identifies Team ID `25ADYD99Q3`, bundle ID
+`.well-known/apple-app-site-association` as part of localization. The Android
+association covers the local release certificate and every Play signing path.
+The Apple association identifies Team ID `25ADYD99Q3`, bundle ID
 `com.jamdailytools.tourneysmith`, and only `/invite/*` URLs.
 
 ## Legal boundary and launch decision
@@ -67,7 +68,7 @@ The repository rules prohibit the assistant from running tests. The owner runs:
 node --test test/landing-copy.test.mjs
 ```
 
-Expected result: 16 passing tests.
+Expected result: 17 passing tests.
 
 ## Deployment notes
 

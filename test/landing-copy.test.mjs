@@ -194,7 +194,7 @@ test("legal scope records launch regions and the standard Apple EULA decision", 
 test("verification assets remain unchanged and are not localized", async () => {
   const expected = new Map([
     ["app-ads.txt", "1c79e66b160cac101850929eadd5f0c02c1d8250f5f2e8c967e6a127aa26bf5c"],
-    [".well-known/assetlinks.json", "4b83e06218ed9f69b79384d3642dd2e36c1f42b175c0ca1a23c879e1de1ea228"],
+    [".well-known/assetlinks.json", "1d1679a91bfd8a18a2f8183e320ebf6964bf930a079ce041a20991db04b30eee"],
   ]);
   for (const [path, digest] of expected) {
     const value = await readFile(new URL(path, root));
@@ -204,6 +204,17 @@ test("verification assets remain unchanged and are not localized", async () => {
     await assert.rejects(access(new URL(`${locale.prefix}app-ads.txt`, root)));
     await assert.rejects(access(new URL(`${locale.prefix}.well-known/assetlinks.json`, root)));
   }
+});
+
+test("Android association covers the local release and every Play signing path", async () => {
+  const [statement] = JSON.parse(await read(".well-known/assetlinks.json"));
+  assert.equal(statement.target.package_name, "com.jamdailytools.tourneysmith");
+  assert.deepEqual(statement.target.sha256_cert_fingerprints, [
+    "B7:94:EE:15:7E:0D:09:30:E7:ED:17:B4:10:51:7A:B4:18:78:45:47:AF:4F:11:01:32:22:78:91:55:01:9F:17",
+    "EA:EA:F8:3E:F4:08:3B:E5:16:CA:2D:0F:24:AC:8D:17:72:B8:64:13:81:4A:31:A5:81:16:70:D4:93:FF:63:CB",
+    "E1:35:8C:40:22:C4:8D:5D:08:24:FE:85:27:EF:E1:3A:D1:2D:6F:D2:3D:6E:75:C8:FB:0B:B1:C4:B9:FB:20:60",
+    "E3:E9:05:0B:33:13:E0:0F:86:89:A8:E2:86:5E:80:AC:19:92:B0:4F:C7:52:EA:95:7B:E7:86:7C:BE:3C:0F:01",
+  ]);
 });
 
 test("Apple association file verifies the production iOS app for invite paths only", async () => {
