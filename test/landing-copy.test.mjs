@@ -206,6 +206,24 @@ test("verification assets remain unchanged and are not localized", async () => {
   }
 });
 
+test("Apple association file verifies the production iOS app for invite paths only", async () => {
+  const association = JSON.parse(await read(".well-known/apple-app-site-association"));
+  assert.deepEqual(association, {
+    applinks: {
+      apps: [],
+      details: [{
+        appID: "25ADYD99Q3.com.jamdailytools.tourneysmith",
+        components: [{"/": "/invite/*", comment: "Matches TourneySmith invitation URLs."}],
+      }],
+    },
+  });
+  const headers = await read("_headers");
+  assert.match(headers, /^\/\.well-known\/apple-app-site-association\s+Content-Type: application\/json$/m);
+  for (const locale of Object.values(locales).filter((value) => value.prefix)) {
+    await assert.rejects(access(new URL(`${locale.prefix}.well-known/apple-app-site-association`, root)));
+  }
+});
+
 test("local links resolve and maintenance documentation matches the locale structure", async () => {
   for (const locale of Object.keys(locales)) {
     for (const page of pages) {

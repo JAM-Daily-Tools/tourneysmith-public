@@ -42,3 +42,5 @@
 # that because there is no page to look at and notice is wrong.
 /.well-known/*
   Cache-Control: no-cache
+/.well-known/apple-app-site-association
+  Content-Type: application/json
