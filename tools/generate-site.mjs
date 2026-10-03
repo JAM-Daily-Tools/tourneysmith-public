@@ -136,7 +136,7 @@ ${footer(localeKey)}
 function legalPage(localeKey, page) {
   const locale = locales[localeKey];
   const content = locale[page];
-  const version = page === "terms" ? "2026-09-16" : "2026-09-27";
+  const version = page === "terms" ? "2026-09-16" : page === "privacy" ? "2026-10-03" : "2026-09-27";
   const sections = content.sections.map((section) => `<section data-section="${section.id}"><h2>${section.title}</h2>${section.body}</section>`).join("\n");
   return `${head(localeKey, page, content.metaTitle, content.metaDescription)}
 <body data-locale="${locale.lang}" data-page="${page === "deletion" ? "delete-account" : page}">
