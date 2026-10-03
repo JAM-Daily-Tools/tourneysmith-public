@@ -23,6 +23,6 @@ content.prefix = "es-ES/";
 content.meta.landingTitle = "TourneySmith | Organiza torneos de deportes de raqueta";
 content.meta.landingDescription = "Organiza torneos de deportes de raqueta con cuadros en vivo, horarios, resultados, clasificación, invitaciones, grupos de jugadores y sincronización en Android y iOS.";
 content.landing.cards[1].body = "Reutiliza jugadores guardados, añade jugadores provisionales, organiza grupos y selecciona hasta cuatro grupos al crear un torneo. TourneySmith admite individuales y dobles cuando cada deporte lo permite.";
-content.landing.cards[2].body = "Invita a jugadores, espectadores y coorganizadores. Los torneos compartidos reúnen cuadros en vivo, clasificación, resultados y registro de marcadores para que todos sigan el mismo evento.";
+content.landing.cards[2].body = "Invita a jugadores y añade coorganizadores. Los torneos compartidos reúnen cuadros en vivo, clasificación, resultados y registro de marcadores para que todos sigan el mismo evento.";
 
 export default content;
