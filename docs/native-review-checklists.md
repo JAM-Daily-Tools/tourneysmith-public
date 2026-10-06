@@ -2,6 +2,17 @@
 
 Review in this order because the first items have the greatest user impact.
 
+## October 5 moderation disclosure update
+
+All five translated catalogs need native review of the new Privacy Policy
+collection, purpose and retention text and the corrected Terms reporting
+instructions. Check that reporting identifies both accounts, preserves the
+reported name/note and applicable tournament/match identifiers, restricts
+access to authorized administrators, and schedules deletion 180 days after
+creation with possible deletion delay. Editing/deleting content or deleting an
+account does not immediately erase the report snapshot. Verify the localized
+report terms against the app. No approval is inferred from generating the pages.
+
 ## Neutral Spanish
 
 Status: App terminology previously reviewed; new website and legal text still
