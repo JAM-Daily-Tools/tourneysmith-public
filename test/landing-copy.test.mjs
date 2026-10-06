@@ -95,7 +95,7 @@ test("public copy contains no em dashes or prohibited filler", async () => {
 
 test("legal translations share versions and section contracts", async () => {
   const contracts = {
-    "privacy.html": {version: "2026-10-03", sections: ["scope", "controller", "collection", "purposes", "providers", "advertising", "sharing", "transfers", "retention", "choices", "rights", "children", "security", "united-states", "brazil", "mexico", "canada-quebec", "eea-uk", "changes", "contact"]},
+    "privacy.html": {version: "2026-10-05", sections: ["scope", "controller", "collection", "purposes", "providers", "advertising", "sharing", "transfers", "retention", "choices", "rights", "children", "security", "united-states", "brazil", "mexico", "canada-quebec", "eea-uk", "changes", "contact"]},
     "terms.html": {version: "2026-09-16", sections: ["acceptance", "eligibility", "accounts", "service", "conduct", "user-content", "invitations", "billing", "advertising", "store-terms", "apple-license", "deletion", "suspension", "intellectual-property", "disclaimers", "liability", "governing-law", "regional-rights", "availability", "changes", "contact"]},
     "delete-account.html": {version: "2026-09-27", sections: ["before-delete", "in-app", "web-request", "immediate-effects", "retention", "subscriptions", "shared-records", "regional-rights", "help"]},
   };
