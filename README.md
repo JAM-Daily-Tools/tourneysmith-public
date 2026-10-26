@@ -49,9 +49,9 @@ The Apple association identifies Team ID `25ADYD99Q3`, bundle ID
 
 ## Legal boundary and launch decision
 
-The planned distribution includes the confirmed North American and Brazilian
-markets plus the approved Spanish-speaking Latin American markets. Optional
-neighboring markets remain candidates until the owner enables them. EEA and UK
+The planned distribution is the provisional Latin American and Caribbean list
+in `docs/launch-compliance-decisions.md`. Held and optional neighboring markets
+remain candidates until the owner enables them. EEA and UK
 storefronts are deferred. Apple’s standard EULA governs the iOS app license;
 the website Terms govern TourneySmith accounts and hosted services. See
 `docs/launch-compliance-decisions.md` for the exact market record and

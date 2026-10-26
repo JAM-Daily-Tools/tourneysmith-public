@@ -2,6 +2,33 @@
 
 Review in this order because the first items have the greatest user impact.
 
+## October 26 player-code and deletion update
+
+All five translated catalogs need native review of every sentence changed on
+October 26. The owner approved the drafts; that is not native review, and
+nothing here counts as reviewed until a native reviewer signs off.
+
+1. Privacy Policy: the sign-in email shown only to you, the player code in
+   collection and sharing, no stored emails for players you add, report
+   tournament name and organizer identifiers, removing or linking a by-name
+   player, the “No thanks” first-run deletion and 7-day backstop, what account
+   deletion does right away and at day 30, the “People who know my code”
+   setting, and what blocking does.
+2. Terms: “name or player code”, “Uninstalling TourneySmith”, and section 12’s
+   Google Play and Apple subscription sentences. The accepted version stays
+   2026-09-16.
+3. Account deletion page: the subscription sentences, the in-app steps (Home,
+   then the Overview tab), the new immediate effects, the day-30 code and
+   profile sentence, and what remains for other participants.
+4. Check app terms against each catalog: player code, Who can add me, People
+   who know my code, No one, No thanks, Home, Overview, Delete account.
+5. The profile of a purged account reads the English “Deleted player” in every
+   language, because the app does not translate it. Confirm the quoted English
+   reads naturally in each translation.
+
+The email-only deletion route (the `web-request` section) is unchanged in this
+update; its new text is held until the route works for Apple relay addresses.
+
 ## October 5 moderation disclosure update
 
 All five translated catalogs need native review of the new Privacy Policy
