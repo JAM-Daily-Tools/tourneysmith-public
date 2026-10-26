@@ -1,54 +1,53 @@
 # Launch and legal-content decision record
 
-Recorded: 2026-09-27
+Recorded: 2026-09-27. Distribution plan updated 2026-10-26.
 
 This is an implementation record, not legal advice or a compliance
 certification.
 
 ## Distribution plan
 
-Confirmed core markets:
+On 2026-10-05 the owner applied a provisional 14-country list from the
+first-launch market review (TourneySmith
+`docs/operations/launch-market-review.md`). Google Play has these countries
+saved; the App Store list is to match Play. Provisional is not legal clearance.
 
-- United States, including Puerto Rico and the other U.S. territories offered
-  by the applicable store
+Provisional launch countries:
+
+- United States (separately offered U.S. territories not individually verified)
 - Canada
 - Mexico
 - Brazil
-
-Planned Spanish-speaking Latin American markets:
-
-- Argentina
 - Bolivia
 - Chile
 - Colombia
-- Costa Rica
 - Dominican Republic
-- Ecuador
-- El Salvador
 - Guatemala
 - Honduras
-- Nicaragua
 - Panama
 - Paraguay
+- Antigua and Barbuda
+- Dominica
+
+Held for now, each for the reason in the market review (filings, appointments,
+applicability, or current-law checks):
+
+- Argentina
+- Costa Rica
+- Ecuador
+- El Salvador
+- Nicaragua
 - Peru
 - Uruguay
-- Venezuela
+- Venezuela, until storefront, payment, sanctions, and privacy checks are done
 
-The owner marked Venezuela with an asterisk in the supplied market list.
-Current storefront support and any account or payment restrictions must be
-confirmed before enabling it.
+The other optional neighboring markets (Belize, Guyana, Jamaica, Trinidad and
+Tobago, Bahamas, Barbados, the other Caribbean storefronts, Suriname, and
+Haiti) stay held until the owner enables them.
 
-Optional neighboring markets, not yet confirmed for launch:
-
-- Belize
-- Guyana
-- Jamaica
-- Trinidad and Tobago
-- Bahamas
-- Barbados
-- Other English-speaking Caribbean storefronts
-- Suriname
-- Haiti
+Still open for the provisional list: the Canada and Québec and Brazil transfer
+work, Colombia’s registration-threshold check, and Chile’s new data-protection
+law, in force 2026-12-01.
 
 Public legal pages use English, Canadian French for Québec and other
 French-speaking users, neutral Latin American Spanish, and Brazilian
@@ -136,8 +135,8 @@ Research links:
 - Confirm the Canada and Québec privacy-officer and cross-border language.
 - Confirm California threshold analysis and advertising opt-out language.
 - Assess whether any country-specific notice or consumer wording is needed for
-  the planned Spanish-speaking Latin American markets.
-- Confirm actual App Store and Google Play availability against the approved
+  the provisional Latin American and Caribbean markets.
+- Confirm actual App Store and Google Play availability against the provisional
   launch list. Do not enable the optional neighboring markets without an owner
   decision.
 - Confirm storefront and payment support for Venezuela before enabling it.
